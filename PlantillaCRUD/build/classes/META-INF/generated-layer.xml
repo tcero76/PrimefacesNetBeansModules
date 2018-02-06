@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN"
+                            "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Templates">
+        <folder name="JSP_Servlet">
+            <file name="CRUD" url="nbresloc:/org/tcero/plantillacrud/CRUD">
+                <!--org.tcero.plantillacrud.PlantillaCRUDWizardIterator-->
+                <attr boolvalue="true" name="template"/>
+                <attr
+                    bundlevalue="org.tcero.plantillacrud.Bundle#PlantillaCRUDWizardIterator_displayName" name="displayName"/>
+                <attr name="instantiatingWizardURL" urlvalue="nbresloc:/org/tcero/plantillacrud/Description.html"/>
+                <attr name="instantiatingIterator" newvalue="org.tcero.plantillacrud.PlantillaCRUDWizardIterator"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+                <attr boolvalue="true" name="requireProject"/>
+            </file>
+            <file name="beanCRUD" url="nbresloc:/org/tcero/plantillacrud/beanCRUD">
+                <!--org.tcero.plantillacrud.PlantillaCRUDWizardIterator-->
+                <attr boolvalue="true" name="template"/>
+                <attr name="instantiatingIterator" newvalue="org.tcero.plantillacrud.PlantillaCRUDWizardIterator"/>
+                <attr name="javax.script.ScriptEngine" stringvalue="freemarker"/>
+                <attr boolvalue="true" name="requireProject"/>
+                <attr name="targetName" stringvalue="beanCRUD.java"/>
+            </file>
+        </folder>
+    </folder>
+</filesystem>

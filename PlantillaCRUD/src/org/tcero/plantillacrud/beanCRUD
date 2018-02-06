@@ -1,0 +1,133 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package bean;
+
+import dao.DAO${clase};
+import utiles.HibernateUtil;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+import modelo.${clase};
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.primefaces.context.RequestContext;
+
+/**
+ *
+ * @author TCERO
+ */
+@ManagedBean(name = "bean${clase}")
+@ViewScoped
+public class Bean${clase} implements Serializable {
+    
+    private Session sesion;
+    private Transaction transaccion;
+    private List<${clase}> ${clasevar};
+    private ${clase} ${clasevar}seleccionado;
+    @ManagedProperty(value = "#{loginBean}")
+    private LoginBean sesionUsuario;
+    
+    public Bean${clase}() {
+        limpiar${clase}();
+        listar();
+    }
+    
+    public void limpiar${clase}(){
+        ${clasevar}seleccionado = new ${clase}();
+    }
+    
+    public void listar() {
+        try {
+            sesion = HibernateUtil.getSessionFactory().openSession();
+            transaccion = sesion.beginTransaction();
+            DAO${clase} dao${clasevar} = new DAO${clase}();
+            ${clasevar} = dao${clasevar}.listar(sesion);
+            transaccion.commit();
+        } catch (Exception e) {
+            if (transaccion != null) {
+                transaccion.rollback();
+            }
+        } finally {
+            if (sesion != null) {
+                sesion.close();
+            }
+        }
+    }
+    
+    public void crear() {
+        ${clasevar}seleccionado.setUsuario(sesionUsuario.getUsuario());
+        try {
+            sesion = HibernateUtil.getSessionFactory().openSession();
+            transaccion = sesion.beginTransaction();
+            DAO${clase} dao${clasevar} = new DAO${clase}();
+            if(${clasevar}seleccionado.getId${clasevar}()==null){
+            ${clasevar}seleccionado.setFecharegistro(new Date());
+            dao${clasevar}.guardar(sesion, ${clasevar}seleccionado);
+            } else {
+            ${clasevar}seleccionado.setFechamodifiacion(new Date());
+            dao${clasevar}.editar(sesion, ${clasevar}seleccionado);
+            }
+            transaccion.commit();
+            RequestContext.getCurrentInstance().execute("PF('dialog${clase}Create').hide();");
+        } catch (Exception e) {
+            if (transaccion != null) {
+                transaccion.rollback();
+            }
+            FacesContext.getCurrentInstance()
+                    .addMessage("idmsgCrea${clase}",
+                            new FacesMessage(FacesMessage.SEVERITY_ERROR,e.getMessage(),e.getCause().getMessage()));
+        } finally {
+            if (sesion != null) {
+                sesion.close();
+            }
+        }
+        listar();
+    }
+    
+    public void borrar() {
+        try {
+            sesion = HibernateUtil.getSessionFactory().openSession();
+            transaccion = sesion.beginTransaction();
+            DAO${clase} dao${clasevar} = new DAO${clase}();
+            dao${clasevar}.borrar(sesion, ${clasevar}seleccionado);
+            transaccion.commit();
+        } catch (Exception e) {
+            if (transaccion != null) {
+                transaccion.rollback();
+            }
+        } finally {
+            if (sesion != null) {
+                sesion.close();
+            }
+        }
+        listar();
+    }
+
+    public List<${clase}> get${clase}() {
+        return ${clasevar};
+    }
+
+    public void set${clase}(List<${clase}> ${clasevar}) {
+        this.${clasevar} = ${clasevar};
+    }
+
+    public ${clase} get${clase}seleccionado() {
+        return ${clasevar}seleccionado;
+    }
+
+    public void set${clase}seleccionado(${clase} ${clasevar}seleccionado) {
+        this.${clasevar}seleccionado = ${clasevar}seleccionado;
+    }
+
+    public void setSesionUsuario(LoginBean sesionUsuario) {
+        this.sesionUsuario = sesionUsuario;
+    }
+}

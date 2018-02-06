@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><module codename="org.tcero.plantillacrud">
+    <module_version install_time="1517415326298" last="true" origin="installer" specification_version="1.0">
+        <file crc="3667659654" name="config/Modules/org-tcero-plantillacrud.xml"/>
+        <file crc="231261169" name="modules/org-tcero-plantillacrud.jar"/>
+    </module_version>
+</module>
