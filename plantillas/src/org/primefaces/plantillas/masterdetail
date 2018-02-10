@@ -13,7 +13,7 @@
                     <title>${title}</title>
                 </h:head>
                 <h:body>
-                    <p:growl id="growl" showDetail="true" />
+                    <p:growl id="idmsg" showDetail="true" />
                     <h:form id="frm${detalle}" enctype="multipart/form-data">
                         <pe:masterDetail id="masterDetail" level="${beanmastercurrentLevel}">
                             <pe:masterDetailLevel level="1"  levelLabel="Ordenes de Trabajo">

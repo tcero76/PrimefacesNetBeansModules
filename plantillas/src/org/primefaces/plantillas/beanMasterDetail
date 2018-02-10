@@ -96,13 +96,13 @@ public class Bean${detalle} implements Serializable {
             }
             transaccion.commit();
             FacesContext.getCurrentInstance()
-                    .addMessage(null,
+                    .addMessage("idmsg",
                             new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro Guardado", null));
         } catch (Exception e) {
             if (transaccion != null) {
                 transaccion.rollback();
             }
-            FacesContext.getCurrentInstance().addMessage(null,
+            FacesContext.getCurrentInstance().addMessage("idmsg",
                             new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", e.getMessage()));
         } finally {
             if (sesion != null) {
@@ -128,13 +128,13 @@ public class Bean${detalle} implements Serializable {
             }
             transaccion.commit();
             FacesContext.getCurrentInstance()
-                    .addMessage(null,
+                    .addMessage("idmsg",
                             new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro Guardado", null));
         } catch (Exception e) {
             if (transaccion != null) {
                 transaccion.rollback();
             }
-            FacesContext.getCurrentInstance().addMessage(null,
+            FacesContext.getCurrentInstance().addMessage("idmsg",
                             new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", e.getMessage()));
         } finally {
             if (sesion != null) {
@@ -151,13 +151,13 @@ public class Bean${detalle} implements Serializable {
             dao${maestrovar}.borrar(sesion,${maestrovar}seleccionado);
             transaccion.commit();
             FacesContext.getCurrentInstance()
-                    .addMessage(null,
+                    .addMessage("idmsg",
                             new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro Borrado", null));
         } catch (Exception e) {
             if (transaccion != null) {
                 transaccion.rollback();
             }
-            FacesContext.getCurrentInstance().addMessage(null,
+            FacesContext.getCurrentInstance().addMessage("idmsg",
                             new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", e.getMessage()));
         } finally {
             if (sesion != null) {
@@ -174,13 +174,13 @@ public class Bean${detalle} implements Serializable {
             dao${detallevar}.borrar(sesion,${detallevar}seleccionado);
             transaccion.commit();
             FacesContext.getCurrentInstance()
-                    .addMessage(null,
+                    .addMessage("idmsg",
                             new FacesMessage(FacesMessage.SEVERITY_INFO, "Registro Borrado", null));
         } catch (Exception e) {
             if (transaccion != null) {
                 transaccion.rollback();
             }
-            FacesContext.getCurrentInstance().addMessage(null,
+            FacesContext.getCurrentInstance().addMessage("idmsg",
                             new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", e.getMessage()));
         } finally {
             if (sesion != null) {
