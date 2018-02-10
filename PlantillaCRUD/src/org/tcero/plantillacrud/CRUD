@@ -13,6 +13,7 @@
                     <title>${title}</title>
                 </h:head>
                 <h:body>
+                    <p:growl id="msg" showSummary="true" showDetail="true"/>
                     <h:form id="frm${clase}" enctype="multipart/form-data">
                         <p:commandButton value="Nuevo"
                                          icon="ui-icon-newwin"
@@ -55,7 +56,7 @@
                             <p:messages id="idmsgCrea${clase}"/>
                             <p:panelGrid id="idPanelCrear" columns="2" columnClasses="label,value">
                                 <p:commandButton value="Crear" process="@form" accesskey="btn_to_enter"
-                                                 update=":frm${clase}"
+                                                 update="msg"
                                                  actionListener="${crear}">
                                 </p:commandButton>
                             </p:panelGrid>
