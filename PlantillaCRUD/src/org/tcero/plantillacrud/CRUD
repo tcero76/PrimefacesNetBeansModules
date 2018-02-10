@@ -13,7 +13,7 @@
                     <title>${title}</title>
                 </h:head>
                 <h:body>
-                    <p:growl id="msg" showSummary="true" showDetail="true"/>
+                    <p:growl id="msg" showDetail="true"/>
                     <h:form id="frm${clase}" enctype="multipart/form-data">
                         <p:commandButton value="Nuevo"
                                          icon="ui-icon-newwin"
