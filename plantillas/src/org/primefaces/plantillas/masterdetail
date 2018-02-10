@@ -75,7 +75,7 @@
                                         <p:row>
                                             <p:column colspan="4">
                                                 <p:commandButton id="idbtnguardar" value="Guardar" process="@form" 
-                                                                 update=":growl, :frm${detalle}:masterDetail"
+                                                                 update=":growl"
                                                                  actionListener="${guardarmaster}">
                                                     <pe:selectDetailLevel level="1"/> 
                                                 </p:commandButton>
@@ -109,12 +109,12 @@
                                             <p:column colspan="4">
                                                 <p:commandButton id="idGrabarOt${detalle}" value="Grabar"
                                                                  process="@form" accesskey="btn_to_enter"
-                                                                 update=":growl, :frm${detalle}:masterDetail"
+                                                                 update=":growl"
                                                                  actionListener="${guardardetalle}">
                                                     <pe:selectDetailLevel level="2"/>
                                                 </p:commandButton>
                                                 <p:commandButton id="idBorrar${detalle}" value="Borrar" process="@form"
-                                                                 update=":growl, :frm${detalle}:masterDetail"
+                                                                 update=":growl"
                                                                  actionListener="${borrardetalle}">
                                                     <pe:selectDetailLevel level="2"/>
                                                 </p:commandButton>
