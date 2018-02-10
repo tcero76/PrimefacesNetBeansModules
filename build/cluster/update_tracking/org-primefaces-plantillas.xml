@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><module codename="org.primefaces.plantillas">
-    <module_version install_time="1517415333339" last="true" origin="installer" specification_version="1.0">
+    <module_version install_time="1518297169096" last="true" origin="installer" specification_version="1.0">
         <file crc="4280436921" name="config/Modules/org-primefaces-plantillas.xml"/>
-        <file crc="2035447770" name="modules/org-primefaces-plantillas.jar"/>
+        <file crc="4064200685" name="modules/org-primefaces-plantillas.jar"/>
     </module_version>
 </module>

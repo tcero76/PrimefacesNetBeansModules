@@ -45,8 +45,8 @@
                                 <h:outputText value="¿Está seguro que desea eliminar este registro?"/>  
                             </h:panelGroup>  
                             <p:commandButton id="delete${clase}Btn" value="Eliminar" 
-                                             update=":frm${clase}" onclick="PF('deleted${clase}Dlg').hide();"
-                                             actionListener="${borrar}"/>
+                                             update="msg" onclick="PF('deleted${clase}Dlg').hide();"
+                                             actionListener="${borrar}"/>   
                             <p:commandButton value="Cancel" type="button" onclick="PF('deleted${clase}Dlg').hide();"/>
                         </p:dialog>
                     </h:form>
